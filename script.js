@@ -119,15 +119,22 @@ document.addEventListener('DOMContentLoaded', () => {
             btnLike.style.background = "";
             btnDislike.style.background = "";
 
-            const response = await fetch('https://official-joke-api.appspot.com/random_joke', { cache: 'no-store' });
+            const response = await fetch('https://v2.jokeapi.dev/joke/Any?safe-mode', { cache: 'no-store' });
             if (!response.ok) throw new Error("Network response was not ok");
             
             const data = await response.json();
             
-            textSetup.textContent = data.setup;
-            setTimeout(() => {
-                textPunchline.textContent = data.punchline;
-            }, 600); // Dramatic pause
+            if (data.type === "single") {
+                textSetup.textContent = "Here's a joke:";
+                setTimeout(() => {
+                    textPunchline.textContent = data.joke;
+                }, 600);
+            } else {
+                textSetup.textContent = data.setup;
+                setTimeout(() => {
+                    textPunchline.textContent = data.delivery;
+                }, 600); // Dramatic pause
+            }
             
         } catch (error) {
             console.error(error);
