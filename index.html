@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous API Explorer</title>
+    <!-- Modern Sans-serif Font matching mockup (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="top-nav">
+            <div class="nav-left">
+                <div class="logo">Luminous <span>API</span></div>
+                <nav class="nav-links">
+                    <a href="#" class="active-link">Docs</a>
+                    <a href="#">Community</a>
+                    <a href="#">Status</a>
+                </nav>
+            </div>
+            
+            <div class="nav-right">
+                <div class="search-box">
+                    <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search endpoints...">
+                </div>
+                
+                <button class="icon-btn" aria-label="Settings">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Profile">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Workspace (Sidebar + Content) -->
+        <div class="main-workspace">
+            
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-top">
+                    <div class="sidebar-header">
+                        <h2>API Explorer</h2>
+                        <span class="badge-premium">PREMIUM TIER</span>
+                    </div>
+
+                    <nav class="sidebar-nav">
+                        <!-- Dog Finder (Active) -->
+                        <button class="sidebar-btn active" data-target="dog-view">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 4.73-.42 4.73 1.02 1.51 1.6 3.27 1.6 5.16 0 5.4-4.54 9.1-9.6 9.1-5.06 0-9.6-3.7-9.6-9.1 0-1.89.58-3.65 1.6-5.16 0 0-1.82-4.15-.42-4.73C4.97 2.42 8.22 3.26 10 5.26 10.65 5.09 11.33 5 12 5z"></path>
+                                <path d="M9.7 15.3c1.23.63 3.37.63 4.6 0"></path>
+                            </svg>
+                            Dog Finder
+                        </button>
+                        
+                        <!-- Random Joke -->
+                        <button class="sidebar-btn" data-target="joke-view">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                            </svg>
+                            Random Joke
+                        </button>
+
+                        <!-- User ID Card -->
+                        <button class="sidebar-btn" data-target="user-view">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            User ID Card
+                        </button>
+
+                        <!-- User Comments -->
+                        <button class="sidebar-btn" data-target="comments-view">
+                            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            User Comments
+                        </button>
+                    </nav>
+                </div>
+
+                <div class="sidebar-bottom">
+                    <button class="deploy-btn">Deploy Request</button>
+                    
+                    <div class="sidebar-footer-links">
+                        <a href="#" class="footer-link">
+                            <svg class="small-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            Help
+                        </a>
+                        <a href="#" class="footer-link">
+                            <svg class="small-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Display Area -->
+            <main class="content-area">
+                
+                <!-- Background visual glows -->
+                <div class="bg-glow purple-glow"></div>
+                <div class="bg-glow cyan-glow"></div>
+
+                <!-- PAGE 1: DOG FINDER -->
+                <section id="dog-view" class="view-section active">
+                    
+                    <div class="page-heading">
+                        <h1>Dog <span class="text-cyan">Finder</span></h1>
+                        <p class="subtitle">Harness the power of the Open Dog API to discover and catalog various<br>breeds. A premium visual playground for testing image retrieval endpoints.</p>
+                    </div>
+
+                    <!-- Main Hero Card representing mockup -->
+                    <div class="hero-card">
+                        
+                        <!-- Left Side: Image container -->
+                        <div class="hero-left">
+                            <div class="image-box" id="dog-image-container">
+                                <!-- Temporary placeholder layout -->
+                                <img id="dog-img" src="" alt="Dog Image" style="display: none;">
+                                <div class="img-shim" id="dog-img-loading"></div>
+                            </div>
+                            <!-- Small pagination design accent -->
+                            <div class="pagination-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Details & Actions -->
+                        <div class="hero-right">
+                            <div class="label-tiny">DETECTED BREED</div>
+                            
+                            <div class="breed-badge-container">
+                                <h3 id="dog-breed" class="breed-name">Fetching...</h3>
+                                <svg class="verified-badge" viewBox="0 0 24 24" fill="#bf00ff">
+                                    <path d="M12 2l2.4 1.2 2.7-.8 1.4 2.4 2.8.5.5 2.8 2.4 1.4-.8 2.7 1.2 2.4-2.2 2-1.2 2.4-2.7-.8-1.4 2.4-2.8-.5-.5-2.8-2.4-1.4.8-2.7-1.2-2.4 2.2-2 1.2-2.4 2.7.8 1.4-2.4 2.8.5z" stroke="#bf00ff" stroke-width="1" stroke-linejoin="round"/>
+                                    <path d="M9 12l2 2 4-4" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+
+                            <button id="btn-fetch-dog" class="primary-cyan-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                                Fetch a New Image
+                            </button>
+
+                            <button id="btn-copy-dog" class="secondary-dark-btn">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                Copy Image URL
+                            </button>
+
+                            <div class="social-proof">
+                                <div class="avatar-stack">
+                                    <img src="https://i.pravatar.cc/100?img=1" alt="user" class="mini-avatar">
+                                    <img src="https://i.pravatar.cc/100?img=2" alt="user" class="mini-avatar">
+                                    <div class="mini-avatar count-avatar">+12k</div>
+                                </div>
+                                <span class="social-text">Developers used this API today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Bottom Stats Cards -->
+                    <div class="stats-grid">
+                        <!-- Stat Card 1 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-blob stat-blob-cyan">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                                </svg>
+                            </div>
+                            <h4 class="stat-title">Endpoint</h4>
+                            <div class="code-snippet">/breeds/image/random</div>
+                        </div>
+
+                        <!-- Stat Card 2 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-blob stat-blob-purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h4 class="stat-title">Latency</h4>
+                            <p class="stat-desc">Avg. 142ms per request</p>
+                        </div>
+
+                        <!-- Stat Card 3 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-blob stat-blob-pink">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h4 class="stat-title">Response</h4>
+                            <p class="stat-desc">JSON formatted strings</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- PAGE 2: RANDOM JOKE -->
+                <section id="joke-view" class="view-section" style="display: none;">
+                    <div class="page-heading">
+                        <h1>Random <span class="text-cyan">Joke</span></h1>
+                        <p class="subtitle">Quickly execute an endpoint to fetch clean, programming-friendly humor.<br>Evaluated internally by thousands of developers daily.</p>
+                    </div>
+
+                    <div class="hero-card joke-card-layout">
+                        <div class="joke-container">
+                            <div class="label-tiny text-purple" style="letter-spacing: 2px;">SETUP</div>
+                            <h2 id="joke-setup" class="joke-text">Fetching joke...</h2>
+                            
+                            <div class="label-tiny text-purple" style="letter-spacing: 2px; margin-top: 2.5rem;">PUNCHLINE</div>
+                            <h3 id="joke-punchline" class="joke-answer"></h3>
+                            
+                            <div class="actions-row" style="margin-top: 3rem; display: flex; gap: 1rem; align-items: center;">
+                                <button id="btn-fetch-joke" class="primary-cyan-btn" style="flex: 1;">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="23 4 23 10 17 10"></polyline>
+                                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                    </svg>
+                                    Fetch New Joke
+                                </button>
+                                <button id="btn-like" class="vote-button" title="Like">👍</button>
+                                <button id="btn-dislike" class="vote-button" title="Dislike">👎</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE 3: USER ID -->
+                <section id="user-view" class="view-section" style="display: none;">
+                    <div class="page-heading">
+                        <h1>User <span class="text-cyan">ID Card</span></h1>
+                        <p class="subtitle">Mock frontend testing profiles with realistically mapped dummy JSON payload.</p>
+                    </div>
+
+                    <div class="hero-card">
+                        <div class="hero-left" style="align-items: center; justify-content: center;">
+                            <div class="image-box round-avatar" id="user-img-container">
+                                <img id="user-img" src="" alt="User Avatar" style="display: none;">
+                                <div class="img-shim" id="user-img-loading"></div>
+                            </div>
+                        </div>
+
+                        <div class="hero-right">
+                            <div class="label-tiny">PROFILE DETAILS</div>
+                            
+                            <div class="breed-badge-container">
+                                <h3 id="user-name" class="breed-name">Fetching...</h3>
+                            </div>
+                            
+                            <p id="user-email" class="user-meta">user@example.com</p>
+                            <p id="user-location" class="user-meta">Location</p>
+
+                            <button id="btn-fetch-user" class="primary-cyan-btn" style="margin-top: 2.5rem;">
+                                Generate New ID
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE 4: USER COMMENTS -->
+                <section id="comments-view" class="view-section" style="display: none;">
+                    <div class="page-heading">
+                        <h1>User <span class="text-cyan">Comments</span></h1>
+                        <p class="subtitle">Placeholder threaded feedback mapped from JSONPlaceholder endpoint.</p>
+                    </div>
+                    
+                    <button id="btn-fetch-comments" class="secondary-dark-btn" style="margin-bottom: 2rem; width: auto; padding: 0.8rem 1.5rem;">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        Refresh Threads
+                    </button>
+
+                    <div class="comments-grid" id="comments-container">
+                        <!-- Filled by JS -->
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Application Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
