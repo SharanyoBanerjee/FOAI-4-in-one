@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnLike.style.background = "";
             btnDislike.style.background = "";
 
-            const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+            const response = await fetch('https://official-joke-api.appspot.com/random_joke', { cache: 'no-store' });
             if (!response.ok) throw new Error("Network response was not ok");
             
             const data = await response.json();
@@ -201,9 +201,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const comments = await response.json();
             commentsContainer.innerHTML = '';
             
-            // Loop first 4 comments
-            for (let i = 0; i < 4; i++) {
+            // Pick a random starting index from the 500 comments
+            const maxIndex = Math.max(0, comments.length - 4);
+            const startIndex = Math.floor(Math.random() * maxIndex);
+            
+            // Loop 4 random comments
+            for (let i = startIndex; i < startIndex + 4; i++) {
                 const comment = comments[i];
+                
+                if (!comment) break; // Safety check
                 
                 const card = document.createElement('div');
                 card.className = 'comment-card';
